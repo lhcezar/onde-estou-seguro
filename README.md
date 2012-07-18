@@ -1,3 +1,5 @@
+__Este projeto apenas utiliza informações do portal de transparência do RS e não tem absolutamente nenhuma relação com a SSP.RS, nem outras secretarias estaduais ou governo.__
+
 ## SIREPOL
 
 ### Relatório de Ocorrências Policiais do Rio Grande do Sul
