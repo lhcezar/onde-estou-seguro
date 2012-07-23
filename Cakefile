@@ -63,6 +63,13 @@ task 'dev', 'start dev env', ->
   # watch_coffee
   options = ['-c', '-b', '-w', '-o', 'app', 'src']
   coffee = spawn './node_modules/coffee-script/bin/coffee', options
+
+  o = ['-c', '-w', '-b', '-o', 'app', 'modules']
+  c = spawn './node_modules/coffee-script/bin/coffee', o
+
+  c.stdout.pipe process.stdout
+  c.stderr.pipe process.stderr
+
   coffee.stdout.pipe process.stdout
   coffee.stderr.pipe process.stderr
   log 'Watching coffee files', green
