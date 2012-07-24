@@ -1,6 +1,21 @@
 extends layout
-block content
-	h3 Onde Estou Seguro - capítulo #{title}?
-	!= js('pie_graph')
 
-	#container(style="width:425px; height:250px")
+
+block content
+	header#titulo
+		h1 Onde Estou Seguro?
+		hr
+	
+	div.row
+		#map
+
+	div.row
+		#crimes_por_tipo.span6
+			include graficos/_crimes_por_tipo
+		#crimes_por_ano.span6
+			include graficos/_crimes_por_ano
+	div.row
+		div.span6
+			p FOO
+		div.span6
+			p BAR

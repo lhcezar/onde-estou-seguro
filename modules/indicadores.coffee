@@ -11,19 +11,18 @@ csv()
 			obj[data[2]] += +data[3]
 
 
-
-
 exports.home = (req, res) ->
 	if req.headers.accept == 'application/json'
 		res.send "{foo:bar} #{req.headers.accept}"
 	else
-		res.render 'indexs', title: req.params.uf
+		res.render 'index', layout: 'layout', title: req.params.uf
 
 exports.verifica_unidade = (req, res, next, id) ->
 	# suporte multiplas UFs
 	uf =
 		sp: false
 		rs: true
+
 	if !uf[id]
 		res.send "Unidade Federativa não implementada"
 	else

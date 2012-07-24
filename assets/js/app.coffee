@@ -1,5 +1,5 @@
 #= require vendor/highcharts
 
-$ ->
+
 
  

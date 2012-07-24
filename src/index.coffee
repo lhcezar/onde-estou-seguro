@@ -1,4 +1,5 @@
 express = require 'express'
+partials = require 'express-partials'
 stylus = require 'stylus'
 assets = require 'connect-assets'
 coffee = require 'coffee-script'
@@ -8,8 +9,10 @@ indicadores = require '../modules/indicadores'
 #r = require './src/indicadores.coffee'
 
 app = express()
+
 # Add Connect Assets
 app.use assets()
+
 # Set View Engine
 app.set 'view engine', 'jade'
 

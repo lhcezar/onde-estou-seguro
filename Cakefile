@@ -49,7 +49,6 @@ task 'docs', 'Generate annotated source code with Docco', ->
     docco.stderr.pipe process.stderr
     docco.on 'exit', (status) -> callback?() if status is 0
 
-
 task 'build', ->
   build -> log ":)", green
 
@@ -64,17 +63,11 @@ task 'dev', 'start dev env', ->
   options = ['-c', '-b', '-w', '-o', 'app', 'src']
   coffee = spawn './node_modules/coffee-script/bin/coffee', options
 
-  o = ['-c', '-w', '-b', '-o', 'app', 'modules']
-  c = spawn './node_modules/coffee-script/bin/coffee', o
-
-  c.stdout.pipe process.stdout
-  c.stderr.pipe process.stderr
-
   coffee.stdout.pipe process.stdout
   coffee.stderr.pipe process.stderr
   log 'Watching coffee files', green
   # watch_js
-  supervisor = spawn 'node', ['./node_modules/supervisor/lib/cli-wrapper.js','-w','app,views', '-e', 'js|jade', 'server']
+  supervisor = spawn 'node', ['./node_modules/supervisor/lib/cli-wrapper.js','-w','app,views,modules', '-e', 'js|jade|coffee', 'server']
   supervisor.stdout.pipe process.stdout
   supervisor.stderr.pipe process.stderr
   log 'Watching js files and running server', green

@@ -10,6 +10,7 @@
     , "nib": "0.4.1"
     , "markdown": "0.3.1"
     , "csv": "*"
+    , "express-partials":"*"
   }, "scripts": {
     "start": "node server.js",
     "test": "mocha --require should --compilers coffee:coffee-script --colors"
