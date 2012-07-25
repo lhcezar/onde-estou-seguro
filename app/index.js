@@ -23,6 +23,8 @@ app.param('uf', indicadores.verifica_unidade);
 
 app.get('/:uf', indicadores.home);
 
+app.get('/', indicadores.home);
+
 port = process.env.PORT || process.env.VMC_APP_PORT || 3000;
 
 app.listen(port, function() {

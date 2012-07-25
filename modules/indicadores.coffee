@@ -15,7 +15,7 @@ exports.home = (req, res) ->
 	if req.headers.accept == 'application/json'
 		res.send "{foo:bar} #{req.headers.accept}"
 	else
-		res.render 'index', layout: 'layout', title: req.params.uf
+		res.render 'index',  title: req.params.uf
 
 exports.verifica_unidade = (req, res, next, id) ->
 	# suporte multiplas UFs
