@@ -16,6 +16,8 @@ app.use assets()
 # Set View Engine
 app.set 'view engine', 'jade'
 
+app.use express.static "#{__dirname}/public"
+
 # UF's sanity check!
 app.param 'uf', indicadores.verifica_unidade
 

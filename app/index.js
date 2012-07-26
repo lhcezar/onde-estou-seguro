@@ -19,6 +19,8 @@ app.use(assets());
 
 app.set('view engine', 'jade');
 
+app.use(express["static"]("" + __dirname + "/public"));
+
 app.param('uf', indicadores.verifica_unidade);
 
 app.get('/:uf', indicadores.home);
