@@ -16,14 +16,13 @@ app.use assets()
 # Set View Engine
 app.set 'view engine', 'jade'
 
-app.use express.static "#{__dirname}/public"
+app.use express.static "public"
 
 # UF's sanity check!
 app.param 'uf', indicadores.verifica_unidade
 
 # precisa configurar os headers no response
-app.get '/:uf', indicadores.home
-app.get '/', indicadores.home
+app.get '/:uf', indicadores.home, title: "FOOBAR"
 
 # Define Port
 port = process.env.PORT or process.env.VMC_APP_PORT or 3000

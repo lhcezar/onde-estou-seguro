@@ -1,8 +1,5 @@
 @import 'nib'
 
-.container
-  margin-top 30px
-
 h2
   smooth-button()
   width: 90%
@@ -19,9 +16,9 @@ pre
   padding: 10px
   border: 1px solid black
 
-html, body
-  height: 100%
 body
   background-color:orange!important
 
-  
+/* workaround for openslayers with twitter bootstrap */
+img
+  max-width: none!important

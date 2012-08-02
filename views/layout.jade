@@ -5,24 +5,20 @@ html
     title {title: title}
     meta(name='description', content='')
     meta(name='author', content='')
-    // Mobile Specific
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-    // CSS
+    != css('bootstrap') 
     != css('app')
-    != css('bootstrap')
+
     style
       #mapdiv{
-        width: 500px; 
-        height:250px; 
-        border: 2px solid black;
+        height:350px;
       }
 
     // JS
+    script(src="/third/openlayers/OpenLayers.js")
     != js('vendor/jquery-1.7.2.min')
     != js('app')
-    != css('/js/vendor/openlayers/theme/default/style')
-   
     
   body
     div.container

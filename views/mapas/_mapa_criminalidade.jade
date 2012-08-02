@@ -6,10 +6,12 @@
     #            location:"./poi.txt",
     #            projection: map.displayProjection
     
-    # map.addLayer pois
-    lonLat = new OpenLayers.LonLat(9.5788, 48.9773)
-            .transform
-            new OpenLayers.Projection "EPSG:4326",
-            map.getProjectionObject()
-    zoom=11
+    #map.addLayer pois
+    lonLat = new OpenLayers.LonLat(-51.22873460, -30.02770410)
+                .transform(
+                    new OpenLayers.Projection("EPSG:4326"),
+                    new OpenLayers.Projection("EPSG:900913")
+                )
+    zoom=10
+    
     map.setCenter lonLat, zoom 

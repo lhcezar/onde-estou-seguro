@@ -4,11 +4,6 @@ extends layout
 block content
 	header#titulo
 		h1 Onde Estou Seguro #{title}?
-		hr
-	
-	div.row
-		#mapdiv.span6
-			include mapas/_mapa_criminalidade
 
 	div.row
 		#crimes_por_tipo.span6
@@ -16,7 +11,6 @@ block content
 		#crimes_por_ano.span6
 			include graficos/_crimes_por_ano
 	div.row
-		div.span6
-			p FOO
-		div.span6
-			p BAR
+		#mapdiv.span12
+			include mapas/_mapa_criminalidade
+	
